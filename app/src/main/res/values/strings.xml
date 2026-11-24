@@ -1,3 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Student Grade Tracker</string>
+    <string name="app_name">Личный кабинет</string>
+    <string name="home_title">Личный кабинет</string>
+    <string name="disciplines_title">Мои дисциплины</string>
+    <string name="add_grade_title">Новая оценка</string>
+    <string name="average_title">Общий средний балл</string>
+    <string name="open_disciplines">Перейти к дисциплинам</string>
+    <string name="add_grade">Добавить оценку</string>
+    <string name="save">Сохранить</string>
+    <string name="empty_disciplines">Дисциплин пока нет</string>
+    <string name="empty_grades">Оценок пока нет</string>
 </resources>

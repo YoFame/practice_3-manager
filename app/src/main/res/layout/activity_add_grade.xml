@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/screen_background">
+
+    <!-- Верхняя панель -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:background="@color/purple"
+        android:text="@string/add_grade_title"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:gravity="center"/>
+
+    <!-- Основная форма -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="18dp">
+
+            <!-- Дисциплина -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Дисциплина"
+                android:textColor="@color/secondary_text"
+                android:textSize="13sp"/>
+
+            <Spinner
+                android:id="@+id/disciplineSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_card"/>
+
+            <!-- Оценка -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Оценка (2-5)"
+                android:textColor="@color/secondary_text"
+                android:textSize="13sp"
+                android:layout_marginTop="14dp"/>
+
+            <EditText
+                android:id="@+id/gradeInput"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="Введите оценку"
+                android:inputType="number"
+                android:singleLine="true"
+                android:padding="12dp"
+                android:background="@drawable/bg_card"/>
+
+            <!-- Дата -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Дата"
+                android:textColor="@color/secondary_text"
+                android:textSize="13sp"
+                android:layout_marginTop="14dp"/>
+
+            <EditText
+                android:id="@+id/dateInput"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="Выберите дату"
+                android:focusable="false"
+                android:clickable="true"
+                android:padding="12dp"
+                android:background="@drawable/bg_card"/>
+
+            <!-- Тип работы -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Тип работы"
+                android:textColor="@color/secondary_text"
+                android:textSize="13sp"
+                android:layout_marginTop="14dp"/>
+
+            <Spinner
+                android:id="@+id/workTypeSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_card"/>
+
+            <!-- Комментарий -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Комментарий"
+                android:textColor="@color/secondary_text"
+                android:textSize="13sp"
+                android:layout_marginTop="14dp"/>
+
+            <EditText
+                android:id="@+id/commentInput"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="Введите комментарий"
+                android:inputType="text"
+                android:singleLine="true"
+                android:padding="12dp"
+                android:background="@drawable/bg_card"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!-- Кнопка сохранения -->
+    <Button
+        android:id="@+id/saveGradeButton"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_margin="12dp"
+        android:text="@string/save"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/purple"/>
+
+</LinearLayout>
