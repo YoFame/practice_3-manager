@@ -90,7 +90,6 @@ class DisciplineListActivity : ComponentActivity() {
         }
     }
 
-
     private fun loadDisciplines() {
         lifecycleScope.launch {
             val disciplines = db.disciplineDao().getAll()
@@ -110,7 +109,6 @@ class DisciplineListActivity : ComponentActivity() {
 
             disciplines.forEach { discipline ->
 
-
                 val subjectGrades = grades.filter {
                     it.disciplineId == discipline.id
                 }
@@ -121,49 +119,56 @@ class DisciplineListActivity : ComponentActivity() {
                     minimumGrades = 3
                 )
 
-
                 val average = if (subjectGrades.isNotEmpty()) {
                     subjectGrades.map { it.value }.average()
                 } else {
                     0.0
                 }
 
-
-
-                val card = TextView(this@DisciplineListActivity)
-
-                val averageText = if (average == null) {
-                    "Нет оценок"
-                } else {
-                    "Средний балл: %.2f".format(average)
-                }
-
-                card.text = buildString {
-                    append(discipline.name)
-                    append("\n")
-                    append(averageText)
-                    append("\n")
-                    append(risk.title)
-                    append("\n")
-                    append(risk.reasons.joinToString("\n"))
-                }
-
-                card.textSize = 16f
-                card.setTextColor(Color.BLACK)
+                // Создаем карточку
+                val card = LinearLayout(this@DisciplineListActivity)
+                card.orientation = LinearLayout.HORIZONTAL
                 card.gravity = Gravity.CENTER_VERTICAL
                 card.setPadding(20, 25, 20, 25)
                 card.setBackgroundColor(risk.color)
 
+                // Текст (слева)
+                val textContainer = LinearLayout(this@DisciplineListActivity)
+                textContainer.orientation = LinearLayout.VERTICAL
+                val textParams = LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f)
+                textContainer.layoutParams = textParams
+
+                val nameText = TextView(this@DisciplineListActivity)
+                nameText.text = discipline.name
+                nameText.textSize = 18f
+                nameText.setTextColor(Color.BLACK)
+                nameText.setTypeface(null, android.graphics.Typeface.BOLD)
+
+                val averageText = TextView(this@DisciplineListActivity)
+                averageText.text = if (average == 0.0) "Нет оценок" else "Средний балл: %.2f".format(average)
+                averageText.textSize = 14f
+                averageText.setTextColor(Color.DKGRAY)
+
+                val riskText = TextView(this@DisciplineListActivity)
+                riskText.text = risk.title + "\n" + risk.reasons.joinToString("\n")
+                riskText.textSize = 12f
+                riskText.setTextColor(Color.DKGRAY)
+                riskText.setPadding(0, 8, 0, 0)
+
+                textContainer.addView(nameText)
+                textContainer.addView(averageText)
+                textContainer.addView(riskText)
+
+                card.addView(textContainer)
 
                 val params = LinearLayout.LayoutParams(
                     LinearLayout.LayoutParams.MATCH_PARENT,
                     LinearLayout.LayoutParams.WRAP_CONTENT
                 )
-
                 params.bottomMargin = 12
-
                 container.addView(card, params)
 
+                // Обычное нажатие - переход в дисциплину
                 card.setOnClickListener {
                     val intent = Intent(
                         this@DisciplineListActivity,
@@ -174,9 +179,37 @@ class DisciplineListActivity : ComponentActivity() {
                     intent.putExtra("disciplineName", discipline.name)
 
                     startActivity(intent)
+                }
 
+                // ДОЛГОЕ НАЖАТИЕ - УДАЛЕНИЕ ДИСЦИПЛИНЫ
+                card.setOnLongClickListener {
+                    showDeleteConfirmation(discipline.name, discipline.id)
+                    true
                 }
             }
         }
+    }
+
+    // Функция для подтверждения удаления
+    private fun showDeleteConfirmation(name: String, id: Int) {
+        android.app.AlertDialog.Builder(this)
+            .setTitle("Удалить дисциплину?")
+            .setMessage("Вы уверены, что хотите удалить «$name»? Все оценки по этой дисциплине будут безвозвратно удалены.")
+            .setPositiveButton("Удалить") { _, _ ->
+                lifecycleScope.launch {
+                    // Находим дисциплину по ID и удаляем её.
+                    // Благодаря CASCADE, оценки удалятся сами.
+                    val disciplines = db.disciplineDao().getAll()
+                    val disciplineToDelete = disciplines.find { it.id == id }
+
+                    if (disciplineToDelete != null) {
+                        db.disciplineDao().delete(disciplineToDelete)
+                        loadDisciplines() // Обновляем список
+                        Toast.makeText(this@DisciplineListActivity, "Дисциплина удалена", Toast.LENGTH_SHORT).show()
+                    }
+                }
+            }
+            .setNegativeButton("Отмена", null)
+            .show()
     }
 }
