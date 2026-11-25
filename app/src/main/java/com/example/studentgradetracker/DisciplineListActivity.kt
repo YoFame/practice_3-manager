@@ -90,6 +90,7 @@ class DisciplineListActivity : ComponentActivity() {
         }
     }
 
+
     private fun loadDisciplines() {
         lifecycleScope.launch {
             val disciplines = db.disciplineDao().getAll()
@@ -118,6 +119,7 @@ class DisciplineListActivity : ComponentActivity() {
                 } else {
                     0.0
                 }
+
 
                 val card = TextView(this@DisciplineListActivity)
 
@@ -150,6 +152,7 @@ class DisciplineListActivity : ComponentActivity() {
                     intent.putExtra("disciplineName", discipline.name)
 
                     startActivity(intent)
+
                 }
             }
         }
