@@ -1,69 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/screen_background">
+    android:background="@color/screen_background"
+    android:padding="16dp">
 
+    <!-- Верхняя панель -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="52dp"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_vertical"
-        android:background="@color/purple"
-        android:paddingHorizontal="12dp">
+        android:paddingBottom="16dp">
 
         <TextView
             android:id="@+id/backButton"
-            android:layout_width="40dp"
-            android:layout_height="match_parent"
-            android:text="‹"
-            android:textSize="30sp"
-            android:textColor="@android:color/white"
-            android:gravity="center"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="← Назад"
+            android:textSize="16sp"
+            android:textColor="@color/purple"
+            android:padding="8dp" />
 
         <TextView
             android:id="@+id/disciplineTitle"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Математика"
-            android:textSize="18sp"
+            android:layout_weight="1"
+            android:text="Название дисциплины"
+            android:textSize="22sp"
             android:textStyle="bold"
-            android:textColor="@android:color/white"/>
+            android:textColor="@color/purple"
+            android:gravity="center" />
 
     </LinearLayout>
 
+    <!-- Сообщение, если оценок нет -->
     <TextView
         android:id="@+id/emptyGradesText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Оценок пока нет"
+        android:text="Пока нет оценок"
+        android:textSize="16sp"
+        android:textColor="#777777"
         android:gravity="center"
         android:padding="24dp"
-        android:visibility="gone"/>
+        android:visibility="gone" />
 
+    <!-- Список оценок -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:fillViewport="true">
 
         <LinearLayout
             android:id="@+id/gradeList"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="12dp"/>
+            android:orientation="vertical" />
 
     </ScrollView>
 
+    <!-- Кнопка добавления оценки -->
     <Button
         android:id="@+id/addGradeButton"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_margin="12dp"
-        android:text="Добавить оценку"
-        android:textColor="@android:color/white"
-        android:backgroundTint="@color/purple"/>
+        android:layout_height="wrap_content"
+        android:text="+ Добавить оценку"
+        android:layout_marginTop="12dp" />
 
 </LinearLayout>

@@ -99,7 +99,7 @@ class MainActivity : ComponentActivity() {
 
         val card = TextView(this)
 
-        card.text = "$name                              ${
+        card.text = "$name${
             String.format("%.1f", average)
         }"
 
