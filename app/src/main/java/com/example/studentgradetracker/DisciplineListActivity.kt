@@ -110,9 +110,17 @@ class DisciplineListActivity : ComponentActivity() {
 
             disciplines.forEach { discipline ->
 
+
                 val subjectGrades = grades.filter {
                     it.disciplineId == discipline.id
                 }
+
+                val risk = RiskCalculator.calculate(
+                    grades = subjectGrades,
+                    threshold = 3.5,
+                    minimumGrades = 3
+                )
+
 
                 val average = if (subjectGrades.isNotEmpty()) {
                     subjectGrades.map { it.value }.average()
@@ -121,17 +129,31 @@ class DisciplineListActivity : ComponentActivity() {
                 }
 
 
+
                 val card = TextView(this@DisciplineListActivity)
 
-                card.text = "${discipline.name}       ${
-                    String.format("%.1f", average)
-                }"
+                val averageText = if (average == null) {
+                    "Нет оценок"
+                } else {
+                    "Средний балл: %.2f".format(average)
+                }
 
-                card.textSize = 17f
+                card.text = buildString {
+                    append(discipline.name)
+                    append("\n")
+                    append(averageText)
+                    append("\n")
+                    append(risk.title)
+                    append("\n")
+                    append(risk.reasons.joinToString("\n"))
+                }
+
+                card.textSize = 16f
                 card.setTextColor(Color.BLACK)
                 card.gravity = Gravity.CENTER_VERTICAL
                 card.setPadding(20, 25, 20, 25)
-                card.setBackgroundColor(Color.WHITE)
+                card.setBackgroundColor(risk.color)
+
 
                 val params = LinearLayout.LayoutParams(
                     LinearLayout.LayoutParams.MATCH_PARENT,
