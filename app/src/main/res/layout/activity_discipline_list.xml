@@ -25,6 +25,17 @@
         android:padding="24dp"
         android:visibility="gone"/>
 
+    <TextView
+        android:id="@+id/overallAverage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Общий средний балл: —"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:padding="12dp" />
+
+
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
