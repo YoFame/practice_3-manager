@@ -98,6 +98,22 @@ class MainActivity : ComponentActivity() {
     private fun createDisciplineCard(
         name: String,
         average: Double
+    ): TextView {
+
+        val card = TextView(this)
+
+        card.text = "$name${
+            String.format("%.1f", average)
+            
+            
+        }"
+
+        card.textSize = 16f
+        card.setTextColor(Color.BLACK)
+        card.gravity = Gravity.CENTER_VERTICAL
+        card.setPadding(18, 22, 18, 22)
+        card.setBackgroundColor(Color.WHITE)
+
     ): LinearLayout {
 
         // 1. Создаем главный контейнер (строка)
