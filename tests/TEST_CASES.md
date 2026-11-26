@@ -8,7 +8,7 @@
 | Предусловие | Приложение установлено на эмуляторе |
 | Шаги | 1. Запустить приложение. 2. Дождаться загрузки. |
 | Ожидаемый результат | Приложение открывается, отображается главный экран со сводкой (общий средний балл, количество оценок). Кнопки/вкладки реагируют на нажатия, краша нет. |
-| Статус | Ожидает |
+| Статус | **Passed** |
 
 ## TC-02. Пустое состояние (Нет оценок)
 | Поле | Описание |
@@ -18,7 +18,7 @@
 | Предусловие | Приложение запущено впервые, база данных пуста |
 | Шаги | 1. Открыть главный экран. 2. Проверить отображение данных. |
 | Ожидаемый результат | Вместо цифр отображается сообщение (например, "У вас пока нет оценок") или средний балл равен 0. Приложение не делит на ноль и не выдает ошибку. |
-| Статус | Ожидает |
+| Статус | **Passed** |
 
 ## TC-03. Переход к списку дисциплин
 | Поле | Описание |
@@ -28,5 +28,74 @@
 | Предусловие | Главный экран открыт |
 | Шаги | 1. Нажать на кнопку/вкладку перехода к дисциплинам. 2. Вернуться назад. |
 | Ожидаемый результат | Открывается экран со списком дисциплин. Навигация работает корректно. |
-| Статус | Ожидает |
-mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
+| Статус | **Passed** |
+
+## TC-04. Добавление новой дисциплины
+| Поле | Описание |
+|---|---|
+| ID | TC-04 |
+| Функция | Добавление дисциплины |
+| Предусловие | Открыт экран «Мои дисциплины» |
+| Шаги | 1. Нажать «+ Добавить дисциплину». 2. Ввести название «Математика». 3. Нажать «Сохранить». |
+| Ожидаемый результат | Новая дисциплина появляется в списке. Выводится всплывающее сообщение об успешном добавлении. |
+| Статус | **Passed** |
+
+## TC-05. Валидация пустого поля при добавлении дисциплины
+| Поле | Описание |
+|---|---|
+| ID | TC-05 |
+| Функция | Валидация ввода |
+| Предусловие | Открыт диалог добавления дисциплины |
+| Шаги | 1. Оставить поле пустым. 2. Нажать «Сохранить». |
+| Ожидаемый результат | Под полем ввода появляется ошибка «Введите название дисциплины». Дисциплина не сохраняется в базу. |
+| Статус | **Passed** |
+
+## TC-06. Сохранение данных после перезапуска (Room)
+| Поле | Описание |
+|---|---|
+| ID | TC-06 |
+| Функция | Постоянное хранение данных |
+| Предусловие | LD добавил Room, приложение запущено |
+| Шаги | 1. Добавить дисциплину «Математика». 2. Добавить оценку «5» по этой дисциплине. 3. Полностью закрыть приложение (смахнуть из недавних). 4. Открыть приложение снова. |
+| Ожидаемый результат | Дисциплина «Математика» и оценка «5» остаются в базе и отображаются на экране. Данные не пропали. |
+| Статус | **Passed** |
+
+## TC-07. Каскадное удаление (Связь Discipline -> Grade)
+| Поле | Описание |
+|---|---|
+| ID | TC-07 |
+| Функция | Удаление дисциплины |
+| Предусловие | В базе есть дисциплина «Физика» с тремя оценками |
+| Шаги | 1. Долгим нажатием удалить дисциплину «Физика». 2. Перезапустить приложение. 3. Проверить базу данных. |
+| Ожидаемый результат | Дисциплина удалена. Все три оценки, привязанные к ней, также удалены (не осталось «мусора»). Приложение не вылетает. |
+| Статус | **Passed** |
+
+## TC-08. Валидация диапазона оценок
+| Поле | Описание |
+|---|---|
+| ID | TC-08 |
+| Функция | Добавление оценки |
+| Предусловие | Открыт экран добавления оценки |
+| Шаги | 1. Ввести оценку «6». 2. Нажать «Сохранить». 3. Ввести оценку «1». 4. Нажать «Сохранить». |
+| Ожидаемый результат | Приложение выдает ошибку («Введите оценку от 2 до 5») и не сохраняет запись в базу данных. |
+| Статус | **Passed** |
+
+## TC-09. Редактирование существующей оценки
+| Поле | Описание |
+|---|---|
+| ID | TC-09 |
+| Функция | Редактирование оценки |
+| Предусловие | В дисциплине есть оценка «3» |
+| Шаги | 1. Нажать на карточку оценки. 2. Изменить значение на «5». 3. Нажать «Сохранить». 4. Перезапустить приложение. |
+| Ожидаемый результат | Старое значение «3» заменяется на «5». Средний балл по дисциплине пересчитывается. После перезапуска оценка остается «5». |
+| Статус | **Passed** |
+
+## TC-10. Индикатор риска для дисциплин
+| Поле | Описание |
+|---|---|
+| ID | TC-10 |
+| Функция | Дополнительный функционал (Аналитика) |
+| Предусловие | В базе есть дисциплина с низким средним баллом (например, 2.5) |
+| Шаги | 1. Открыть экран «Мои дисциплины». 2. Обратить внимание на цвет карточки и текст. |
+| Ожидаемый результат | Карточка подсвечивается красным/желтым цветом. Отображается текст «Высокий риск» и пояснение причины (низкий балл, мало оценок). |
+| Статус | **Passed** |
