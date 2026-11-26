@@ -101,6 +101,8 @@ class MainActivity : ComponentActivity() {
 
         card.text = "$name${
             String.format("%.1f", average)
+            
+            
         }"
 
         card.textSize = 16f
