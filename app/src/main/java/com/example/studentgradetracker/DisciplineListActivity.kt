@@ -20,8 +20,7 @@ class DisciplineListActivity : ComponentActivity() {
         setContentView(R.layout.activity_discipline_list)
 
         db = AppDatabase.getDatabase(this)
-
-        val addButton = findViewById<Button>(R.id.addDisciplineButton)
+    val addButton = findViewById<Button>(R.id.addDisciplineButton)
 
         addButton.setOnClickListener {
             showAddDisciplineDialog()
